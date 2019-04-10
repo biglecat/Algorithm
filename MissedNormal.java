@@ -38,4 +38,35 @@ public class MissedNormal {
         }
     }
 
+
+    //另一种解法 ： 不另外申请数组  在原数组上操作
+    public int firstMisIIsingPositiveII(int[] nums) {
+        int i=0;
+        for (i=0;  i < nums.length; ) {
+            if (nums[i] == i+1) {
+                i++;
+            }
+            else if (nums[i] <=0 || nums[i] > nums.length) {
+                i++;
+            }
+            else {
+                // 交换两个数
+                int temp = nums[i];
+                nums[i] = nums[(nums[i]-1)];
+                nums[temp-1] = temp;
+                // 若交换的是左边的或是相同的数，则继续往后遍历
+                if ((temp-1) < i || temp == nums[i]) {
+                    i++;
+                }
+            }
+        }
+        for (i=0;  i < nums.length;i++ ) {
+            if (nums[i] != (i+1)) {
+                break;
+            }
+        }
+        return (i+1);
+    }
+
+
 }
