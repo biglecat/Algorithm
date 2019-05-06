@@ -9,12 +9,12 @@ public class BstToGst {
         }
         int[] presum = {0};
         getTreeSum(presum,root);
-        //再次中顺遍历二叉树，更新节点值
         update(presum,root);
 
         return root;
     }
 
+    //再次中序遍历二叉树，更新节点值
     private void update(int[] presum, TreeNode root) {
         if(root.left!=null){
             update(presum,root.left);
@@ -26,8 +26,8 @@ public class BstToGst {
         }
     }
 
+    //中序遍历一棵二叉树  记录已遍历过的节点之和
     private void getTreeSum(int[] presum, TreeNode root) {
-        //中序遍历一棵二叉树  记录已遍历过的节点之和
         if(root.left!=null){
             getTreeSum(presum,root.left);
         }
