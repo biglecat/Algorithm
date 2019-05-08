@@ -1,6 +1,6 @@
 package leetcode;
 
-public class minScoreTrian {
+public class MinScoreTriangulation {
     //多边三角形剖分的最低得分：思路——>也许动态规划可以解决  超時！ 开辟一个数组避免重复计算
     public int minScoreTriangulation(int[] A) {
         //开辟一个数组记录中间值   避免重复计算
