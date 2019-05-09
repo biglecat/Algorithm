@@ -3,12 +3,14 @@ package leetcode;
 import java.util.Arrays;
 
 public class TwoCitySchedCost {
+
     public int twoCitySchedCost(int[][] costs) {
+        //计算每个人   A市费用-B市费用 ，并按差值从小到大  排序
         Arrays.sort(costs, (a, b) -> {
             return (a[0] - a[1]) - (b[0] - b[1]);
         });
-        //前一半取去A市，后一半取去B市
-        // 前一半是去A市最合适 后一半市去B市最合适。
+
+        //前N个人派往A市，其余派往B市
         int sum = 0;
         for (int i = 0; i < costs.length; ++i) {
             if (i < costs.length / 2) {
@@ -19,6 +21,7 @@ public class TwoCitySchedCost {
         }
         return sum;
     }
+
 
 //    //两地调度
 //    public int twoCitySchedCost(int[][] costs) {
