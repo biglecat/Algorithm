@@ -1,4 +1,4 @@
-# Algorithm on leetcode
+# Algorithm (leetcode)
 
 Some code to solve questions on leetcode.
 
