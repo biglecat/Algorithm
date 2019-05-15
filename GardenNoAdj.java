@@ -1,13 +1,9 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 public class GardenNoAdj {
 
-    //暴力搜索
     public int[] gardenNoAdj(int N, int[][] paths) {
         //N个花园，每个花园的与邻接边的颜色不能一样  每个花园的邻接边不会超过3个
         int[] res = new int[N];
